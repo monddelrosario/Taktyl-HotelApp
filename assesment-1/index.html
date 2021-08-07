@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <title>Hotel Details</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <link rel="shortcut icon" href="assets/HI_mk_logo_hiltonbrandlogo_3.jpg" />
+
+  <style>
+    body,
+    h1 {
+      font-family: "Raleway", sans-serif;
+    }
+    body,
+    html {
+      height: 100%;
+    }
+    .bgimg {
+      background-image: url("assets/background.png");
+      min-height: 100%;
+      display: block;
+      background-position: center;
+      background-size: cover;
+    }
+    .img-responsive {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      border-width: 5px;
+      border-style: solid;
+      border-color: whitesmoke;
+    }
+    .center-items {
+      max-width: 100%;
+      /* max-width: 50%; */
+      justify-content: center;
+
+      margin: auto;
+      flex-direction: column;
+    }
+    p {
+      padding: 0px;
+      font-family: sans-serif;
+    }
+    /* accordion */
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .accordion:after {
+      content: "\003E";
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+      font-size: 20px;
+    }
+
+    .active:after {
+      content: "\2303";
+      font-size: 20px;
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .bottom-border-radius {
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  </style>
+  <body>
+    <div class="bgimg w3-display-container w3-animate-opacity">
+      <div class="w3-padding-large">
+        <img
+          class="img-responsive w3-animate-opacity"
+          src="assets/hotelexterior.jpg"
+        />
+        <div class="center-items w3-animate-top">
+          <h2 class="w3-large w3-text-white" style="font-weight: bolder">
+            Hilton Chicago
+          </h2>
+          <p class="w3-text-gray">720 South Michigan Avenue</p>
+          <p class="w3-text-gray">Chicago, Illinois, 60605</p>
+          <p class="w3-text-white" style="text-decoration: underline">
+            1-312-922-4400
+          </p>
+
+          <button
+            class="accordion"
+            style="border-top-left-radius: 1rem; border-top-right-radius: 1rem"
+          >
+            Map
+          </button>
+          <div class="panel">
+            <p>Map Section</p>
+          </div>
+
+          <button class="accordion">Photo Gallery</button>
+          <div class="panel">
+            <p>Photo Gallery Section</p>
+          </div>
+
+          <button class="accordion bottom-border-radius">Amenities</button>
+          <div class="panel bottom-border-radius">
+            <p>Amenities Section</p>
+          </div>
+        </div>
+      </div>
+      <!-- <hr
+        class="w3-padding-large w3-border-grey"
+        style="margin: auto; width: 60%"
+      /> -->
+
+      <div
+        class="w3-display-bottom w3-padding-large w3-text-white"
+        style="text-align: center"
+      >
+        <p>&#169; Copyright 2021 Hilton Hotels & Resorts Inc.</p>
+      </div>
+    </div>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+            console.log("tama ");
+
+            if (i === 2) {
+              acc[2].style.cssText =
+                "border-bottom-left-radius: 1rem;border-bottom-right-radius: 1rem;";
+            }
+          } else {
+            panel.style.display = "block";
+            console.log("mali ");
+            if (i === 2) {
+              acc[2].style.cssText =
+                "border-bottom-left-radius: 0rem;border-bottom-right-radius: 0rem;";
+            }
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
